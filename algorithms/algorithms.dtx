@@ -1246,7 +1246,8 @@
 %<algorithmic>  \newcommand{\REPEAT}[1][default]{\ALC@it\algorithmicrepeat%
 %<algorithmic>\ALC@com{##1}\begin{ALC@rpt}}
 %<algorithmic>  \newcommand{\UNTIL}[1]{\end{ALC@rpt}\ALC@it\algorithmicuntil\ ##1}
-%<algorithmic>  \newcommand{\FUNCTION}[1][default]{\ALC@it\algorithmicfunction%
+%<algorithmic>  \newcommand{\FUNCTION}[2][default]{\ALC@it\algorithmicfunction\ ##2\ %
+%<algorithmic>\textbf{:}%
 %<algorithmic>\ALC@com{##1}\begin{ALC@func}}
 %<algorithmic>  \ifthenelse{\boolean{ALC@noend}}{
 %<algorithmic>    \newcommand{\ENDIF}{\end{ALC@if}}
