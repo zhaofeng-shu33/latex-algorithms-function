@@ -2,7 +2,7 @@ BUILD_DIR = ./build
 
 .PHONY: all
 
-all: $(BUILD_DIR)/algorithms.pdf
+all: $(BUILD_DIR)/algorithms.pdf $(BUILD_DIR)/example.pdf
 
 $(BUILD_DIR)/algorithms.pdf: algorithms.dtx
 	mkdir -p $(BUILD_DIR)
@@ -12,3 +12,6 @@ $(BUILD_DIR)/algorithms.pdf: algorithms.dtx
 
 algorithms.dtx: algorithms/algorithms.dtx
 	cp algorithms/algorithms.dtx ./
+
+$(BUILD_DIR)/example.pdf: example.tex
+	pdflatex -output-directory=$(BUILD_DIR) example.tex
