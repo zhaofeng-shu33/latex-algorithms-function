@@ -1135,6 +1135,8 @@
 %<algorithmic>\newcommand{\algorithmicbody}{\textbf{do}}
 %<algorithmic>\newcommand{\algorithmictrue}{\textbf{true}}
 %<algorithmic>\newcommand{\algorithmicfalse}{\textbf{false}}
+%<algorithmic>\newcommand{\algorithmicfunction}{\textbf{function}}
+%<algorithmic>\newcommand{\algorithmicendfunction}{\algorithmicend\ \algorithmicfunction}
 %<algorithmic>\def\ALC@item[#1]{%
 %<algorithmic>\if@noparitem \@donoparitem
 %<algorithmic>  \else \if@inlabel \indent \par \fi
@@ -1215,6 +1217,7 @@
 %<algorithmic>  \newenvironment{ALC@whl}{\begin{ALC@g}}{\end{ALC@g}}
 %<algorithmic>  \newenvironment{ALC@loop}{\begin{ALC@g}}{\end{ALC@g}}
 %<algorithmic>  \newenvironment{ALC@rpt}{\begin{ALC@g}}{\end{ALC@g}}
+%<algorithmic>  \newenvironment{ALC@func}{\begin{ALC@g}}{\end{ALC@g}}
 %<algorithmic>  \renewcommand{\\}{\@centercr}
 %<algorithmic>  \newcommand{\INPUTS}[1][default]{\ALC@it\algorithmicinputs\ \ALC@com{##1}\begin{ALC@inputs}}
 %<algorithmic>  \newcommand{\ENDINPUTS}{\end{ALC@inputs}}
@@ -1243,17 +1246,21 @@
 %<algorithmic>  \newcommand{\REPEAT}[1][default]{\ALC@it\algorithmicrepeat%
 %<algorithmic>\ALC@com{##1}\begin{ALC@rpt}}
 %<algorithmic>  \newcommand{\UNTIL}[1]{\end{ALC@rpt}\ALC@it\algorithmicuntil\ ##1}
+%<algorithmic>  \newcommand{\FUNCTION}[1][default]{\ALC@it\algorithmicfunction%
+%<algorithmic>\ALC@com{##1}\begin{ALC@func}}
 %<algorithmic>  \ifthenelse{\boolean{ALC@noend}}{
 %<algorithmic>    \newcommand{\ENDIF}{\end{ALC@if}}
 %<algorithmic>    \newcommand{\ENDFOR}{\end{ALC@for}}
 %<algorithmic>    \newcommand{\ENDWHILE}{\end{ALC@whl}}
 %<algorithmic>    \newcommand{\ENDLOOP}{\end{ALC@loop}}
+%<algorithmic>    \newcommand{\ENDFUNCTION}{\end{ALC@func}}
 %<algorithmic>  }{
 %<algorithmic>    \newcommand{\ENDIF}{\end{ALC@if}\ALC@it\algorithmicendif}
 %<algorithmic>    \newcommand{\ENDFOR}{\end{ALC@for}\ALC@it\algorithmicendfor}
 %<algorithmic>    \newcommand{\ENDWHILE}{\end{ALC@whl}\ALC@it\algorithmicendwhile}
 %<algorithmic>    \newcommand{\ENDLOOP}{\end{ALC@loop}\ALC@it\algorithmicendloop}
-%<algorithmic>  } 
+%<algorithmic>    \newcommand{\ENDFUNCTION}{\end{ALC@func}\ALC@it\algorithmicendfunction}
+%<algorithmic>  }
 %<algorithmic>  \renewcommand{\@toodeep}{}
 %<algorithmic>  \begin{list}{\ALC@lno}{\setcounter{ALC@rem}{0}\setcounter{ALC@line}{0}%
 %<algorithmic>    \itemsep\z@ \itemindent\z@ \listparindent\z@%
