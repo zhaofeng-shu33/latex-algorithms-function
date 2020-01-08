@@ -27,7 +27,7 @@
 %
 %<algorithmic>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
 %<algorithmic>\ProvidesPackage{algorithmic}
-%<algorithmic>   [2009/08/24 v0.1 Document Style `algorithmic']
+%<algorithmic>   [2020/01/08 v0.2 Document Style `algorithmic']
 %
 %
 %<*driver>
@@ -66,6 +66,7 @@
 %   Right brace   \}     Tilde         \~}
 %
 % \changes{v0.1}{2009/08/24}{Migrated the package to .ins and .dtx format}
+% \changes{v0.2}{2020/01/08}{Add function statement}
 %
 % \GetFileInfo{algorithm.sty}
 % \GetFileInfo{algorithmic.sty}
@@ -461,6 +462,25 @@
 %   \ENDIF
 % \end{algorithmic}
 %
+% \subsection{The \emph{function} Statement}
+% The \emph{function} construct takes the forms:
+% \begin{verbatim}
+% \FUNCTION{<name>} <text> \ENDFUNCTION
+% \end{verbatim}
+% For example,
+% \begin{verbatim}
+% \begin{algorithmic}
+% \FUNCTION{\texttt{Add}$(a,b)$}
+%  \RETURN $a+b$
+% \ENDFUNCTION
+% \end{algorithmic}
+% \end{verbatim}
+% produces
+% \begin{algorithmic}
+% \FUNCTION{\texttt{Add}$(a,b)$}
+%  \RETURN $a+b$
+% \ENDFUNCTION
+% \end{algorithmic}
 % \subsection{Printing Messages}
 %
 % Another feature of the \keyword{algorithmic} environment is that it
