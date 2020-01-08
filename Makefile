@@ -6,7 +6,7 @@ all: $(BUILD_DIR)/algorithms.pdf
 
 $(BUILD_DIR)/algorithms.pdf: algorithms.dtx
 	mkdir -p $(BUILD_DIR)
-	sudo rm -r /usr/local/texlive/texmf-dist/tex/latex/algorithms
+	rm -r /usr/local/texlive/texmf-dist/tex/latex/algorithms
 	pdflatex -output-directory=$(BUILD_DIR) algorithms.dtx
 
 algorithms.dtx: algorithms/algorithms.dtx
