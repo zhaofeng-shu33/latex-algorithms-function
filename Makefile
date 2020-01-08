@@ -4,6 +4,9 @@ BUILD_DIR = ./build
 
 all: $(BUILD_DIR)/algorithms.pdf
 
-$(BUILD_DIR)/algorithms.pdf: algorithms/algorithms.dtx
+$(BUILD_DIR)/algorithms.pdf: algorithms.dtx
 	mkdir -p $(BUILD_DIR)
-	pdflatex -output-directory=$(BUILD_DIR) algorithms/algorithms.dtx
+	pdflatex -output-directory=$(BUILD_DIR) algorithms.dtx
+
+algorithms.dtx: algorithms/algorithms.dtx
+	cp algorithms/algorithms.dtx ./
