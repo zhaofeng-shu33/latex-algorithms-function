@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: zhaofengshu33/mini-latex:latest
+
+    steps:
+      - checkout
+
+      - run:
+          name: build
+          command: make
+      - store_artifacts:
+          path: ./build/algorithms.pdf
+          destination: algorithms.pdf
